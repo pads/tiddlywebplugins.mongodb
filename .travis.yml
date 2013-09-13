@@ -1,0 +1,7 @@
+language: python
+python:
+  - "2.7"
+install: "make install_dev install"
+script: "make pep8 test_with_coverage"
+after_success:
+  - "coveralls"

@@ -1,0 +1,56 @@
+[![Build Status](https://travis-ci.org/pads/tiddlywebplugins.mongodb.png)](https://travis-ci.org/pads/tiddlywebplugins.mongodb)
+[![Coverage Status](https://coveralls.io/repos/pads/tiddlywebplugins.mongodb/badge.png)](https://coveralls.io/r/pads/tiddlywebplugins.mongodb)
+[![Latest Release](https://pypip.in/v/tiddlywebplugins.mongodb/badge.png)](https://crate.io/packages/tiddlywebplugins.mongodb/)
+About
+=====
+
+Experimenting with using MongoDB as a store for TiddlyWeb.  Very much still in the early construction stage.
+
+Requirements
+============
+
+* [Python](http://www.python.org/).
+* [pip](http://www.pip-installer.org/en/latest/).
+* make.
+* A working TiddlyWeb instance to test against.
+* [py.test](http://pytest.org/latest/) to run the tests.
+* A [MongoDB](http://www.mongodb.org/) server.
+
+Modifying
+=========
+
+The best way to figure out how to work with this project is to look at the `.travis.yml` file.
+
+`setup.py` is used to package up the plugin, install and distribute.
+
+Plugin code lives in the `tiddlywebplugins` directory.
+
+Tests live in the `test` directory.
+
+* `make install` installs the plugin as a package on your system
+* `make install_dev` installs packages necessary to run tests, check style and provide test coverage
+* `make test` runs the tests.
+* `make test_with_coverage` runs the tests with code coverage reporting from `pytest-cov`
+* `make pep8` runs pep8 over the code to check for style compliance.
+(you may need sudo for this.)
+* `make release` packages and uploads the plugin to [PyPI](http://pypi.python.org/pypi) for distribution.
+
+Setting up MongoDB
+==================
+
+TODO.
+
+Plugin Installation
+===================
+
+Install tiddlywebplugins.mongodb:
+
+    pip install -U tiddlywebplugins.mongodb
+
+TiddlyWeb Configuration
+=======================
+
+Reference the plugin from your TiddlyWeb configuration as a server store plugin e.g:
+
+    'server_store': ['tiddlywebplugins.mongodb', { 'db_config': 'mongodb://localhost:27017/'}],
+    'indexer': 'tiddlywebplugins.mongodb'
