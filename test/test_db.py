@@ -8,7 +8,7 @@ from pymongo import MongoClient
 
 from tiddlyweb.control import get_tiddlers_from_recipe
 from tiddlywebplugins.utils import get_store
-from tiddlywebconfig import config
+from tiddlyweb.config import config
 from tiddlyweb.model.bag import Bag
 from tiddlyweb.model.tiddler import Tiddler
 from tiddlyweb.model.recipe import Recipe
